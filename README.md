@@ -12,8 +12,6 @@ To run dashboard type:
 ```
 python app.py
 ```
-git remote add origin https://github.com/Addepto/DASH_DataVizualization.git
-
 
 ![Dashboard](https://github.com/Addepto/DASH_DataVizualization/blob/master/images/dashboard.png)
 
