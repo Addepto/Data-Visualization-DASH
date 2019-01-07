@@ -136,19 +136,19 @@ app.layout = html.Div(children=[
  
 	#Right column
     html.Div([
-		#Violin graph
-        html.H1(children='Violin Graph'),
+		#Box Plot
+        html.H1(children='Box Plot'),
         html.Div([
             html.Div([
 				#X axis data selection
                 dcc.Dropdown(
-                    id='violin_xaxis-column',
+                    id='box_xaxis-column',
                     options=[{'label': i, 'value': i} for i in available_indicators],
                     value=available_indicators[0]
                 ),
 				#Choice between linear or log axis
                 dcc.RadioItems(
-                    id='violin_xaxis-type',
+                    id='box_xaxis-type',
                     options=[{'label': i, 'value': i} for i in ['Filter', 'No Filter']],
                     value='No Filter',
                     labelStyle={'display': 'inline-block'}
@@ -159,13 +159,13 @@ app.layout = html.Div(children=[
             html.Div([
 				#Y axis data selection
                 dcc.Dropdown(
-                    id='violin_yaxis-column',
+                    id='box_yaxis-column',
                     options=[{'label': i, 'value': i} for i in available_indicators],
                     value=available_indicators[1]
                 ),
 				#Choice between linear or log axis
                 dcc.RadioItems(
-                    id='violin_yaxis-type',
+                    id='box_yaxis-type',
                     options=[{'label': i, 'value': i} for i in ['Linear', 'Log']],
                     value='Linear',
                     labelStyle={'display': 'inline-block'}
@@ -174,7 +174,7 @@ app.layout = html.Div(children=[
             
         ]),  
 		#Plot graph		
-        dcc.Graph(id='violin_graph'),
+        dcc.Graph(id='box_graph'),
         
 		#Histogram    
 		html.H1(children='Histogram'),
@@ -313,19 +313,19 @@ def update_graph(xaxis_column_name, yaxis_column_name, zaxis_column_name,
         )
     }
 
-#Callback for Violin Graph
+#Callback for Box Plot
 @app.callback(
-    dash.dependencies.Output('violin_graph', 'figure'),
-    [dash.dependencies.Input('violin_xaxis-column', 'value'),
-     dash.dependencies.Input('violin_yaxis-column', 'value'),
-     dash.dependencies.Input('violin_xaxis-type', 'value'),
-     dash.dependencies.Input('violin_yaxis-type', 'value'),])
+    dash.dependencies.Output('box_graph', 'figure'),
+    [dash.dependencies.Input('box_xaxis-column', 'value'),
+     dash.dependencies.Input('box_yaxis-column', 'value'),
+     dash.dependencies.Input('box_xaxis-type', 'value'),
+     dash.dependencies.Input('box_yaxis-type', 'value'),])
 def update_graph(xaxis_column_name, yaxis_column_name, xaxis_type, yaxis_type):
     if xaxis_type == 'Filter':
         data = []
         for value in df[xaxis_column_name].unique():
             trace = {
-                    "type": 'violin',
+                    "type": 'box',
                     "x": value,
                     "y": df[df[xaxis_column_name] == value][yaxis_column_name],
                     "name": str(value),
@@ -339,7 +339,7 @@ def update_graph(xaxis_column_name, yaxis_column_name, xaxis_type, yaxis_type):
             data.append(trace)
     else:
         trace = {
-                    "type": 'violin',
+                    "type": 'box',
                     "x0": str(yaxis_column_name),
                     "y": df[yaxis_column_name].values,
                     "box": {
