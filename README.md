@@ -19,6 +19,8 @@ python app.py
 
 ![Dashboard](https://github.com/Addepto/DASH_DataVizualization/blob/master/images/histogram.PNG)
 
+![Dashboard](https://github.com/Addepto/DASH_DataVizualization/blob/master/images/box%20plot.PNG)
+
 
 - Dataset data.csv should be adjacent to app.py. Any dataset in csv format where variables are numerical or strings can be visualized. Only datetime variables should be transformed to be understandable by pandas (for example to_datetime function) or cast to numerical value. 
 
