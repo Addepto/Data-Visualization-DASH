@@ -1,5 +1,6 @@
 Visualize your data with Dash
 ==================================
+At last in 2015 appeared Dash as an Open Source library for creating Web-based dashboards and other visual applications. Dash is based on Plotly - very powerful plot drawing library but is not limited to it, your Python code can do anything you want. Dash is built with React and Flask, which empowers it with modern UI elements like dropdowns and sliders.
 
 In this repository we show you an example of simple Dashboard for fast visualization of data, which will be handy for any Data Scientist during process of Data Exploration.
 
