@@ -17,9 +17,9 @@ python app.py
 
 - Our short code generated fully interactive dashboard. We use AdventureWorksDW2017 SQL Server database (vTargetMail view) to create a sample dataset.
 
-![Dashboard](https://github.com/Addepto/DASH_DataVizualization/blob/master/images/dashboard.png)
+![Dashboard](https://github.com/Addepto/DASH_DataVizualization/blob/master/images/histogram.PNG)
 
 
-- As default dashboard will be available on the http://127.0.0.1:8050/. Dataset data.csv should be adjacent to app.py. Any dataset in csv format where variables are numerical or strings can be visualized. Only datetime variables should be transformed to be understandable by pandas (for example to_datetime function) or cast to numerical value. 
+- Dataset data.csv should be adjacent to app.py. Any dataset in csv format where variables are numerical or strings can be visualized. Only datetime variables should be transformed to be understandable by pandas (for example to_datetime function) or cast to numerical value. 
 
 - You can deploy your dashboard in several ways to be available for a broad public. You can use Dash servers for enterprises or use platforms like Digital Ocean or Heroku. You may also run the app on your own server.
